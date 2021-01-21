@@ -3,7 +3,10 @@
 
 
 class Square:
-    """ square module """
+    """ square module 
+    
+    
+    """
     def __init__(self, size):
         """ intilization methode
         Args:
