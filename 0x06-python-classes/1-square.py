@@ -5,5 +5,8 @@
 class Square:
     """ square module """
     def __init__(self, size):
-        """ intilization module """
+        """ intilization methode
+        Args:
+            size (int): This defines the size of the square.
+         """
         self.__s    size = size
