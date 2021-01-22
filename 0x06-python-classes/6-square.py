@@ -16,9 +16,9 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+        print("xxxxx{}".format(len(position)))
         p = position
-        x = type(p[0]) == int and type(p[1]) == int and p[0] * p[1] > 0
-        if type(position) != tuple or len(position) != 2 or not x:
+        if type(p) != tuple or (len(p) != 2) or (p[0] * p[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
@@ -82,6 +82,7 @@ class Square:
             value (tuple): position of the square in the screen
         """
         x = type(value[0]) == int and type(value[1]) == int
+        x = x and value[0] >= 0 and value[1] >= 0
         if type(value) != tuple or len(value) != 2 or not x:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
