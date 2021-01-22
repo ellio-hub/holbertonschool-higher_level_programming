@@ -16,7 +16,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-        print("xxxxx{}".format(len(position)))
         p = position
         if type(p) != tuple or (len(p) != 2) or (p[0] * p[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
