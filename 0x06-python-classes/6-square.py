@@ -17,7 +17,9 @@ class Square:
         else:
             self.__size = size
         p = position
-        if type(p) != tuple or (len(p) != 2) or (p[0] * p[1] < 0):
+        if type(p) != tuple or (len(p) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(p[0]) != int or type(p[1]) != int or (p[0] * p[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
@@ -80,9 +82,10 @@ class Square:
         Args:
             value (tuple): position of the square in the screen
         """
-        x = type(value[0]) == int and type(value[1]) == int
-        x = x and value[0] >= 0 and value[1] >= 0
-        if type(value) != tuple or len(value) != 2 or not x:
+        if type(value) != tuple or len(value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        p = value
+        if type(p[0]) != int or type(p[1]) != int or (p[0] * p[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
