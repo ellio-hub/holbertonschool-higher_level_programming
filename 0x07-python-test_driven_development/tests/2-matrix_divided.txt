@@ -1,0 +1,45 @@
+The ``2-matrix_divided`` module
+======================
+
+using ``matrix_divided``
+----------------------
+
+``matrix_divided`` returns a new matrix with the values 
+of the given matrix divided by "div" (a given number).
+
+Import module
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Check module Docstring
+    >>> a = __import__("2-matrix_divided").__doc__
+    >>> len(a) >= 1
+    True
+
+Check function Docstring
+    >>> a = __import__("2-matrix_divided").matrix_divided.__doc__
+    >>> len(a) >= 1
+    True
+
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    >>> matrix_divided(3, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[3, 2]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
