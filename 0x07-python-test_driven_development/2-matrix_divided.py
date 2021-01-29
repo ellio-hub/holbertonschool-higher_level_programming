@@ -26,6 +26,10 @@ def matrix_divided(matrix, div):
         for j in i:
             if type(j) not in [int, float]:
                 raise TypeError(s)
-            k.append(round(j / div, 2))
+            if div == float('inf'):
+                w = round(0)
+            else:
+                w = round(j / div, 2)
+            k.append(w)
         x.append(k)
     return x

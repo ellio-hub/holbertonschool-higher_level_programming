@@ -43,3 +43,13 @@ Check function Docstring
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[3, 3, 3]], "three")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>>matrix_divided([[3, 1, 1], [1, 1]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
