@@ -1,0 +1,53 @@
+The ``1-my_list`` module
+======================
+Using ``MyList``
+-------------------
+
+    Import function from module:
+    >>> MyList = __import__("1-my_list").MyList
+
+    check module docstring:
+    >>> a = __import__("1-my_list").__doc__
+    >>> len(a) >= 1
+    True
+
+    check class docstring:
+    >>> a = __import__("1-my_list").MyList.__doc__
+    >>> len(a) >= 1
+    True
+
+    check method docstring:
+    >>> a = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> len(a) >= 1
+    True
+
+    check MyList is a subclass of class list:
+    >>> issubclass(MyList, list)
+    True
+
+
+    >>> w = MyList()
+    >>> w.print_sorted()
+    []
+
+    >>> w.append(1)
+    >>> w.append(2)
+    >>> w.append(3)
+    >>> print(w)
+    [1, 2, 3]
+
+    >>> w.print_sorted()
+    [1, 2, 3]
+
+    >>> w = MyList()
+    >>> w.append(3)
+    >>> w.append(2)
+    >>> w.append(1)
+    >>> print(w)
+    [3, 2, 1]
+
+    >>> w.print_sorted()
+    [1, 2, 3]
+
+    >>> print(w)
+    [3, 2, 1]
