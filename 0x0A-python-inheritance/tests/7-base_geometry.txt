@@ -1,53 +1,80 @@
-The ``1-my_list`` module
+The ``7-base_geometry`` module
 ======================
-Using ``MyList``
+Using ``BaseGeometry``
 -------------------
 
-    Import function from module:
-    >>> MyList = __import__("1-my_list").MyList
+    Import class from module:
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
     check module docstring:
-    >>> a = __import__("1-my_list").__doc__
+    >>> a = __import__("7-base_geometry").__doc__
     >>> len(a) >= 1
     True
 
     check class docstring:
-    >>> a = __import__("1-my_list").MyList.__doc__
+    >>> a = __import__("7-base_geometry").BaseGeometry.__doc__
     >>> len(a) >= 1
     True
 
     check method docstring:
-    >>> a = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> a = __import__("7-base_geometry").BaseGeometry.area.__doc__
     >>> len(a) >= 1
     True
 
-    check MyList is a subclass of class list:
-    >>> issubclass(MyList, list)
+    >>> b = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+    >>> len(b) >= 1
     True
 
 
-    >>> w = MyList()
-    >>> w.print_sorted()
-    []
+    >>> w = BaseGeometry()
+    >>> w.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
 
-    >>> w.append(1)
-    >>> w.append(2)
-    >>> w.append(3)
-    >>> print(w)
-    [1, 2, 3]
+    >>> w.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    >>> w.print_sorted()
-    [1, 2, 3]
+    >>> w.integer_validator("age", 1)
 
-    >>> w = MyList()
-    >>> w.append(3)
-    >>> w.append(2)
-    >>> w.append(1)
-    >>> print(w)
-    [3, 2, 1]
+    >>> w.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
 
-    >>> w.print_sorted()
-    [1, 2, 3]
+    >>> w.integer_validator("age", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
 
-    >>> print(w)
-    [3, 2, 1]
+    >>> w.integer_validator("age", "4")
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> w.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> w.integer_validator("age", [3])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> w.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> w.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> w.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
