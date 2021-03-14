@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 write Object to a text file with JSON representation
