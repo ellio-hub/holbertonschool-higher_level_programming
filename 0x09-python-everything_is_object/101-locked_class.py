@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+module
+"""
+
+
 class LockedClass:
     """ conditional instance attribute creation
         Condition:
