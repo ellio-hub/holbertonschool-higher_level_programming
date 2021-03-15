@@ -17,7 +17,7 @@ printf("[*] Allocated = %zu\n", ((PyListObject *)p)->allocated);
 while (j < i)
 {
 obj = PyList_GET_ITEM(p, j);
-printf("Element %zu: %i\n", j, Py_TYPE(obj)->tp_name);
+printf("Element %zu: %s\n", j, Py_TYPE(obj)->tp_name);
 j++;
 }
 }
