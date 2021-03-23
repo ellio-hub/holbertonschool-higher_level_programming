@@ -1,6 +1,6 @@
 #!/usr/bin/node
-let a = 'C is fun\nPython is cool\nJavaScript is amazing\n';
 let i;
-for (i = 0; a[i]; i++) {
-    process.stdout.write(a[i]);
+const t = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+for (i = 0; i < 3; i++) {
+  console.log(t[i]);
 }
