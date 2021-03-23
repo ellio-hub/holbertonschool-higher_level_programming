@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let i = ' is ';
+const i = ' is ';
 let a = 'undefined';
 let b = 'undefined';
 process.argv.forEach((val, index) => {
