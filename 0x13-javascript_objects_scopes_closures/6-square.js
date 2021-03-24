@@ -5,15 +5,15 @@ module.exports = class Square extends x {
     super(size, size);
   }
 
-  charPrint(c) {
-    let x ='';
+  charPrint (c) {
+    let x = '';
     if (c === undefined) {
       c = 'X';
     }
-    for(let i = 0; i < this.width; i++){
+    for (let i = 0; i < this.width; i++) {
       x += c;
     }
-    for(let i = 0; i < this.width; i++){
+    for (let i = 0; i < this.width; i++) {
       console.log(x);
     }
   }
