@@ -2,22 +2,29 @@
 '''
 function module
 '''
-if __name__ == "__main__":
-    from sys import argv
-    import MySQLdb
+import sys
+import MySQLdb
 
-    d = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=argv[1],
-                         passwd=argv[2],
-                         d=argv[3])
 
-    c = d.cursor()
-    c.execute("SELECT * FROM states WHERE\
-    name LIKE BINARY 'N%' ORDER BY states.id")
-    r = c.fetchall()
-    for row in r:
-        print(row)
-
+def main():
+    conn = MySQLdb.connect(
+                        host="localhost",
+                        port=3306,
+                        user=sys.argv[1],
+                        passwd=sys.argv[2],
+                        db=sys.argv[3],
+                        charset="utf8"
+                            )
+    c = conn.cursor()
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    c.execute(query)
+    rows = c.fetchall()
+    for x in rows:
+        if x[1][0] == 'N':
+            print(x)
     c.close()
-    d.close()
+    conn.close()
+
+
+if __name__ == "__main__":
+    main()

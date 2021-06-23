@@ -7,10 +7,10 @@ import MySQLdb
 
 def main():
     d = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=argv[1],
-                         passwd=argv[2],
-                         database=argv[3])
+                        port=3306,
+                        user=argv[1],
+                        passwd=argv[2],
+                        database=argv[3])
 
     c = d.cursor()
 
