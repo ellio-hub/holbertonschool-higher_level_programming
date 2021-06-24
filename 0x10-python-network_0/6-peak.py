@@ -4,21 +4,17 @@ function Module
 """
 
 
-def div(array, b, t):
-    """function to divide a list"""
-
-    m = int((t + b)/2)
-    if array[m-1] <= array[m] >= array[m+1]:
-        return array[m]
-    elif array[m] > array[m+1]:
-        return div(array, b, m-1)
-    elif array[m] < array[m+1]:
-        return div(array, m+1, t)
-
-
-def find_peak(arr):
+def find_peak(x):
     """Find peak"""
 
-    if not arr:
+    if x == []:
         return None
-    return div(arr, 0, len(arr)-1)
+    if len(x) == 1:
+        return x[0]
+    if x[0] >= x[1]:
+        return x[0]
+    if x[len(x) - 1] >= x[len(x) - 2]:
+        return x[len(x) - 1]
+    for i in range(1, len(x) - 1):
+        if x[i] >= x[i - 1] and x[i] >= x[i + 1]:
+            return x[i]
