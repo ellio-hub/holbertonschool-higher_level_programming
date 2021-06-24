@@ -14,5 +14,5 @@ if __name__ == '__main__':
     t = x.json()[:10]
     for w in t:
         h = w['sha']
-        author = w['commit']['author']['repo_name']
+        author = w['commit']['author']['name']
         print('{}: {}'.format(h, author))
